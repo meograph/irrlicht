@@ -328,7 +328,9 @@ namespace irr
 
         FileSystem->changeWorkingDirectoryTo([[[NSBundle mainBundle] resourcePath] UTF8String]);
 
+#ifdef _IRR_CREATE_WINDOW_
 		createWindow();
+#endif
         createViewAndDriver();
         
         if (!VideoDriver)

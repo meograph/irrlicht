@@ -92,6 +92,8 @@
 // so _IRR_COMPILE_WITH_IOS_BUILTIN_MAIN_ must be enabled in this case. If you need a custom UIApplicationDelegate
 // you must disable _IRR_COMPILE_WITH_IOS_BUILTIN_MAIN_ definition and handle all application events yourself.
 #define _IRR_COMPILE_WITH_IOS_BUILTIN_MAIN_
+// Disable if you need to use your own custom window 
+#define _IRR_CREATE_WINDOW_
 #else
 #define _IRR_OSX_PLATFORM_
 #define _IRR_COMPILE_WITH_OSX_DEVICE_
