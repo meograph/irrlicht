@@ -772,9 +772,12 @@ namespace irr
 #ifdef _IRR_COMPILE_WITH_OGLES2_
 				{
 					CIrrViewEAGLiOS* view = [[CIrrViewEAGLiOS alloc] initWithFrame:resolution forDevice:this];
-					CreationParams.WindowSize = core::dimension2d<u32>(view.frame.size.width, view.frame.size.height);
-				
-					dataStorage->View = view;
+                    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+                    CGFloat scale = [UIScreen mainScreen].scale;
+                    view.contentScaleFactor = scale;
+                    CreationParams.WindowSize = core::dimension2d<u32>(view.frame.size.width * scale, view.frame.size.height * scale);
+
+                    dataStorage->View = view;
 					data.OpenGLiOS.View = (__bridge void*)view;
 				
 					ContextManager = new video::CEAGLManager();
