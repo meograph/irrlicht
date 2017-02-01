@@ -1,2 +1,3 @@
 lib
-source/Irrlicht/Irrlicht.xcodeproj/xcuserdata
+**/xcuserdata
+bin

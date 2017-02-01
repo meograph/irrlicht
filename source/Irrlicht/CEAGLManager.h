@@ -55,6 +55,8 @@ namespace video
 		const SExposedVideoData& getContext() const;
 
 		bool activateContext(const SExposedVideoData& videoData);
+        
+        u32 getDefaultFBOID() const;
 
 		// Swap buffers.
 		bool swapBuffers();

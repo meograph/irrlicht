@@ -18,6 +18,7 @@
 #include "fast_atof.h"
 #include "COGLES2ExtensionHandler.h"
 #include "IContextManager.h"
+#include "CEAGLManager.h"
 
 #if defined(_IRR_WINDOWS_API_)
 // include windows headers for HWND
@@ -47,7 +48,7 @@ namespace video
 
 	public:
 		//! constructor
-		COGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, IContextManager* contextManager);
+		COGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, CEAGLManager* contextManager);
 
 		//! destructor
 		virtual ~COGLES2Driver();
@@ -391,7 +392,7 @@ namespace video
 
 		core::array<RequestedLight> RequestedLights;
 
-		IContextManager* ContextManager;
+		CEAGLManager* ContextManager;
 	};
 
 } // end namespace video

@@ -34,7 +34,7 @@ namespace irr
 namespace video
 {
 
-COGLES2Driver::COGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, IContextManager* contextManager) :
+COGLES2Driver::COGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, CEAGLManager* contextManager) :
 	CNullDriver(io, params.WindowSize), COGLES2ExtensionHandler(), CacheHandler(0), MaterialRenderer2D(0), CurrentRenderMode(ERM_NONE),
 	ResetRenderStates(true), Transformation3DChanged(true), AntiAlias(params.AntiAlias), OGLES2ShaderPath(params.OGLES2ShaderPath),
 	ColorFormat(ECF_R8G8B8), Params(params), ContextManager(contextManager)
@@ -2405,7 +2405,8 @@ COGLES2Driver::~COGLES2Driver()
 		}
 		else
 		{
-			CacheHandler->setFBO(0);
+            auto defFBO = ContextManager->getDefaultFBOID();
+			CacheHandler->setFBO(defFBO);
 
 			destRenderTargetSize = core::dimension2d<u32>(0, 0);
 
@@ -2855,7 +2856,7 @@ class IVideoDriver;
 class IContextManager;
 #endif
 
-IVideoDriver* createOGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, IContextManager* contextManager)
+IVideoDriver* createOGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, CEAGLManager* contextManager)
 {
 #ifdef _IRR_COMPILE_WITH_OGLES2_
 	return new COGLES2Driver(params, io, contextManager);

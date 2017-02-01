@@ -296,7 +296,7 @@ namespace irr
 	{
 		IVideoDriver* createOGLES1Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, IContextManager* contextManager);
 		
-		IVideoDriver* createOGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, IContextManager* contextManager);
+		IVideoDriver* createOGLES2Driver(const SIrrlichtCreationParameters& params, io::IFileSystem* io, CEAGLManager* contextManager);
 	}
 	
     struct SIrrDeviceiOSDataStorage

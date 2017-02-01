@@ -243,7 +243,12 @@ bool CEAGLManager::activateContext(const SExposedVideoData& videoData)
 
 	return status;
 }
-
+    
+u32 CEAGLManager::getDefaultFBOID() const
+{
+    return FrameBuffer.BufferID;
+}
+    
 const SExposedVideoData& CEAGLManager::getContext() const
 {
 	return Data;

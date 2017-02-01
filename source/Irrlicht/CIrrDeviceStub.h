@@ -10,6 +10,7 @@
 #include "SIrrCreationParameters.h"
 #include "CVideoModeList.h"
 #include "IContextManager.h"
+#include "CEAGLManager.h"
 
 namespace irr
 {
@@ -220,7 +221,7 @@ namespace irr
 		};
 		SMouseMultiClicks MouseMultiClicks;
 		video::CVideoModeList* VideoModeList;
-		video::IContextManager* ContextManager;
+		video::CEAGLManager* ContextManager;
 		SIrrlichtCreationParameters CreationParams;
 		bool Close;
 	};
